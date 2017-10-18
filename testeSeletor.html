@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Teste</title>
+</head>
+<body>
+	<ul class="afazeres">
+	    <li>Ir ao médico</li>
+	    <li>Trocar a senha do Wifi</li>
+	    <li>Estudar Javascript</li>
+	</ul>
+	<form class="adicionar-tarefa">
+	    <input type="text" name="tarefa">
+	    <button id="botao-adicionar" name="b">Salvar</button>
+	</form>
+
+	<button id="botao">clique-me</button>
+
+	<script>
+		var form = document.querySelector("form");
+		var botao = form.querySelector("#botao-adicionar");
+
+		//1
+		botao.addEventListener("click", function(event) {
+
+			event.preventDefault();
+			console.log(form.tarefa.value);
+
+		});
+
+		
+		//2
+		var botao2 = document.querySelector("botao");
+
+		function botaoHandler() {
+			alert('Botão clicado');
+		}
+
+		botao2.onclick = botaoHandler;
+
+	</script>
+
+</body>
+
+
+<!--
+1 - Veja o recebimento do parâmetro 'event' na função. Este event é um parâmetro que está sempre presente nas funções que são executadas ao chamar um evento, mas como nem sempre o utilizamos, nem sempre passamos ele para a nossa função. Mas como ele é quem contêm a função .preventDefault() que é a que estamos interessados, precisamos passá-lo como parâmetro. Veja também que pode-se rselecionar 'tarefa' diretamente através da tag name.
+
+2 - Para cada evento existente no JavaScript, há a propriedade on + nomeDoEvent. No caso, temos onclick para o evento click, onmouseover para o evento mouseover e assim por diante. Nesse caso, a função que desejamos executar é atribuída direto na propriedade.
+
+-->
+
+
+</html>
