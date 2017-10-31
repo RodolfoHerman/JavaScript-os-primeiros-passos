@@ -14,11 +14,8 @@ botaoEnvio.addEventListener("click", function(event){
 		return;
 	}
 
-	var tBody = document.querySelector("#tabela-pacientes");
-
-	//appendChild insere um elemento filho ao elemento pai
-	tBody.appendChild(montarTr(paciente));
-
+	adicionaPacienteNaTabela(paciente);
+	
 	//limpar dados do form
 	form.reset();
 
@@ -28,6 +25,12 @@ botaoEnvio.addEventListener("click", function(event){
 	ul.innerHTML = "";
 
 });
+
+function adicionaPacienteNaTabela(paciente) {
+	var tBody = document.querySelector("#tabela-pacientes");
+	//appendChild insere um elemento filho ao elemento pai
+	tBody.appendChild(montarTr(paciente));
+}
 
 
 function exibeMensagensDeErro(erros) {
